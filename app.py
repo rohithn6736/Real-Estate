@@ -14,13 +14,13 @@ def predict():
   year_built = request.form.get('year_built')
   tx_year = request.form.get('tx_year')
 
-  roof_list = ['roof_Asphalt', 'roof_Composition Shingle', 'roof_Missing','roof_Other', 'roof_Shake Shingle']
+  roof_list = ['Asphalt', 'Composition Shingle', 'Missing','Other', 'Shake Shingle']
   roof = [np.zeros(len(roof_list))]
 
   exterior_walls_list = ['Brick','Brick veneer','Combination','Metal','Missing','Other','Siding (Alum/Vinyl)','Wood']
   exterior_walls = [np.zeros(len(exterior_walls_list))]
 
-  property_type_list = ['property_type_Apartment / Condo / Townhouse','property_type_Single-Family']
+  property_type_list = ['Apartment / Condo / Townhouse','Single-Family']
   property_type = [np.zeros(len(property_type_list))]
 
   index_roof = roof_list.index(request.form.get('roof'))
