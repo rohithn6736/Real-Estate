@@ -50,9 +50,9 @@ def predict():
   for x in sorted(a, reverse=True):
     del int_features[x]
   
-  int_features.extend(exterior_walls_list)
-  int_features.extend(roof_list)
-  int_features.extend(property_type_list)
+  int_features.extend(exterior_walls)
+  int_features.extend(roof)
+  int_features.extend(property_type)
   int_features.insert(20,two_and_two)
   int_features.insert(21,during_recession)
 
