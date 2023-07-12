@@ -53,7 +53,7 @@ def predict():
   int_features.insert(20,two_and_two)
   int_features.insert(21,during_recession)
 
-  int_features = [x for x in int_features]
+  int_features = [int(x) for x in int_features]
 
   final_features = [np.array(int_features)]
   prediction = model.predict(final_features)
