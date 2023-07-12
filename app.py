@@ -53,6 +53,8 @@ def predict():
   int_features.extend(exterior_walls)
   int_features.extend(roof)
   int_features.extend(property_type)
+  int_features.insert(22,property_age)
+  int_features.insert(23,school_score)
   int_features.insert(20,two_and_two)
   int_features.insert(21,during_recession)
 
