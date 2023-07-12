@@ -27,10 +27,10 @@ def predict():
   roof[index_roof] = 1
 
   index_walls = exterior_walls_list.index(request.form.get('exterior_walls'))
-  exterior_walls_list[index_walls] = 1
+  exterior_walls[index_walls] = 1
   
   index_property_type = property_type_list.index(request.form.get('property_type'))
-  property_type_list[index_property_type] = 1
+  property_type[index_property_type] = 1
 
   a = [3,5,6,7,24]
   two_and_two = 0
