@@ -43,7 +43,7 @@ def predict():
   if (int(request.form.get('tx_year')) >= 2010 & int(request.form.get('tx_year')) <= 2013):
     during_recession = 1
 
-  int_features = [int(x) for x in request.form.values()]
+  int_features = [x for x in request.form.values()]
   for x in a:
     del int_features[x]
   
@@ -52,7 +52,8 @@ def predict():
   int_features.extend(property_type_list)
   int_features.insert(20,two_and_two)
   int_features.insert(21,during_recession)
-  
+
+  int_features = [x for x in int_features]
 
   final_features = [np.array(int_features)]
   prediction = model.predict(final_features)
