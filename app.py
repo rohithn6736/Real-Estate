@@ -33,12 +33,15 @@ def predict():
   property_type_list[index_property_type] = 1
 
   a = [3,5,6,7,24]
-
+  two_and_two = 0
+  during_recession = 0
   
   property_age = tx_year - year_built
   school_score = request.form.get(num_schools)*request.form.get(median_school)
-  (two_and_two := 1) if (request.form.get(beds) == 2 & request.form.get(baths) == 2) else (two_and_two := 0)
-  (during_recession := 1) if (request.form.get(tx_year) >= 2010 & request.form.get(tx_year) <= 2013) else (during_recession := 0)
+  if (request.form.get(beds) == 2 & request.form.get(baths) == 2):
+   two_and_two = 1
+  if (request.form.get(tx_year) >= 2010 & request.form.get(tx_year) <= 2013):
+    during_recession = 1
 
   int_features = [int(x) for x in request.form.values()]
   for x in a:
@@ -47,6 +50,8 @@ def predict():
   int_features.extend(exterior_walls_list)
   int_features.extend(roof_list)
   int_features.extend(property_type_list)
+  int_features.insert(20,two_and_two)
+  int_features.insert(21,during_recession)
   
 
   final_features = [np.array(int_features)]
