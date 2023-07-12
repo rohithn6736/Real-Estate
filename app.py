@@ -44,7 +44,7 @@ def predict():
     during_recession = 1
 
   int_features = [x for x in request.form.values()]
-  for x in a:
+  for x in sorted(a, reverse=True):
     del int_features[x]
   
   int_features.extend(exterior_walls_list)
