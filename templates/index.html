@@ -1,1 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Estate Price Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .col {
+            flex: 0 0 25%;
+            padding: 0 30px;
+        }
+
+        select{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+
+        }  
+        select:invalid { color: gray; }
+
+    </style>
+</head>
+<body>
+    <h1>Real Estate Price Predictor</h1>
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="sqft">Sqft:</label>
+                        <input type="number" id="sqft" name="sqft" placeholder="sqft" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="beds">No. of beds:</label>
+                        <input type="number" id="beds" name="beds" placeholder="no. of beds" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="baths">No. Baths:</label>
+                        <input type="number" id="baths" name="baths" placeholder="no. of baths" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">            
+                    <div class="form-group">
+                        <label for="year_built">Built Year:</label>
+                        <input type="number" id="year_built" name="year_built" placeholder="Enter built year" required>
+                    </div>
+                </div>
+                <div class="col">            
+                    <div class="form-group">
+                        <label for="lot_size">Lot Size:</label>
+                        <input type="number" id="lot_size" name="lot_size" placeholder="Enter lot size" required>
+                    </div>
+               </div>
+                <div class="col">
+                    <div class="form-group">
+                    <label for="property_type">Property Type:</label>
+                    <select id="property_type" name="property_type" required>
+                    <option value="" disabled selected hidden>Enter property type</option>
+                    <option value="Apartment">Apartment / Condo / Townhouse</option>
+                    <option value="Single_Family">Single-Family</option>
+                </select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="exterior_walls">Exterior Walls Type:</label>
+                    <select id="exterior_walls" name="exterior_walls" required>
+                    <option value="" disabled selected hidden>Enter exterior walls type</option>
+                    <option value="Brick">Brick</option>
+                    <option value="Brick veneer">Brick veneer</option>
+                    <option value="Combination">Combination</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Wood">Wood</option>
+                    <option value="Other">Other</option>
+                    <option value="Siding">Siding (Alum/Vinyl)</option>
+
+                </select>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="roof">Roof Type:</label>
+                    <select id="roof" name="roof" required>
+                    <option value="" disabled selected hidden>Enter roof type</option>
+                    <option value="Asphalt">Asphalt</option>
+                    <option value="Composition Shingle">Composition Shingle</option>
+                    <option value="Other">Other</option>
+                    <option value="Shake Shingle">Shake Shingle</option>
+                    <option value="Michael Wilson">Michael Wilson</option>
+                </select>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="basement">Basement:</label>
+                        <input type="text" id="basement" name="basement" placeholder="no. of basements" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="restaurants">No. of Restaurants:</label>
+                        <input type="number" id="restaurants" name="restaurants" placeholder="no. of restaurants" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="groceries">No. of Grocery Stores:</label>
+                        <input type="number" id="groceries" name="groceries" placeholder="no. of grocery stores" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="nightlife">No. of Nightlife:</label>
+                        <input type="number" id="nightlife" name="nightlife" placeholder="Eno. of nightlife venues" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="cafes">No. of Cafes:</label>
+                        <input type="number" id="cafes" name="cafes" placeholder="no. of cafes" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="shopping">No. of Shopping Centres:</label>
+                        <input type="number" id="shopping" name="shopping" placeholder="no. of shopping centres" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="arts_entertainment">No. of Art Places:</label>
+                        <input type="number" id="arts_entertainment" name="arts_entertainment" placeholder="no. of art & entertainment" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="beauty_spas">No. of Spa:</label>
+                        <input type="number" id="beauty_spas" name="beauty_spas" placeholder="no. of spa's" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="active_life">No. of Active Life:</label>
+                        <input type="number" id="active_life" name="active_life" placeholder="no. of active life places" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="median_age">Customer Median Age:</label>
+                        <input type="number" id="median_age" name="median_age" placeholder="customer median age" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="married">Married People%:</label>
+                        <input type="text" id="married" name="married" placeholder="married people%" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="college_grad">Graduated College%:</label>
+                        <input type="text" id="college_grad" name="college_grad" placeholder="graduated college%" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="property_tax">Property Tax:</label>
+                        <input type="number" id="property_tax" name="property_tax" placeholder="property tax" required>
+                    </div>   
+                </div>
+            </div>
+           <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="median_school">Median School Score:</label>
+                        <input type="number" id="median_school" name="median_school" placeholder="median school score" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="num_schools">No. of schools:</label>
+                        <input type="number" id="num_schools" name="num_schools" placeholder="no. of schools" required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="nightlife">No. Baths:</label>
+                        <input type="number" id="baths" name="nightlife" placeholder="no. of baths" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="tx_year">Year of Sale:</label>
+                        <input type="text" id="tx_year" name="tx_year" placeholder="year of sale" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+            <button type="submit">Submit</button>
+            </div>
+
 
