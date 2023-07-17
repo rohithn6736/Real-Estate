@@ -41,9 +41,9 @@ def predict():
   
   property_age = int(tx_year) - int(year_built)
   school_score = int(request.form.get('num_schools'))*int(request.form.get('median_school'))
-  if (int(request.form.get('beds')) == 2 & int(request.form.get('baths')) == 2):
+  if (int(request.form.get('beds')) == 2 and int(request.form.get('baths')) == 2):
    two_and_two = 1
-  if (int(request.form.get('tx_year')) >= 2010 & int(request.form.get('tx_year')) <= 2013):
+  if (int(request.form.get('tx_year')) >= 2010 and int(request.form.get('tx_year')) <= 2013):
     during_recession = 1
 
   int_features = [x for x in request.form.values()]
