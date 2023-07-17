@@ -59,6 +59,7 @@ def predict():
   int_features.insert(21,during_recession)
 
   int_features = np.array([int(x) for x in int_features])
+  int_features1 = int_features
 
   mean = np.array([3.43422819e+00, 2.57919463e+00, 2.32278523e+03, 1.27466597e+04,
        8.78523490e-01, 3.94959732e+01, 4.38859060e+00, 5.00469799e+00,
@@ -86,7 +87,7 @@ def predict():
   prediction = model.predict(final_features)
 
   output = round(prediction[0], 2)
-  return render_template('index.html', prediction_text='House Price should be $ {}'.format(output))
+  return render_template('index.html', prediction_text='House Price should be $ {}'.format(int_features1))
 
 if __name__ == '__main__':
   app.run(debug=True)
