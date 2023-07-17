@@ -49,14 +49,15 @@ def predict():
   int_features = [x for x in request.form.values()]
   for x in sorted(a, reverse=True):
     del int_features[x]
-  
+
+  int_features.insert(20,two_and_two)
+  int_features.insert(21,during_recession)
+  int_features.insert(22,property_age)
+  int_features.insert(23,school_score)
   int_features.extend(exterior_walls)
   int_features.extend(roof)
   int_features.extend(property_type)
-  int_features.insert(22,property_age)
-  int_features.insert(23,school_score)
-  int_features.insert(20,two_and_two)
-  int_features.insert(21,during_recession)
+
 
   int_features = np.array([int(x) for x in int_features])
   int_features1 = int_features
