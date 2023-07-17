@@ -90,14 +90,8 @@
 <body>
     <h1>Real Estate Price Predictor</h1>
     <div class="container">
-        <form action="{{ url_for('predict')}}"method="post">
+        <form>
             <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="sqft">Sqft:</label>
-                        <input type="number" id="sqft" name="sqft" placeholder="sqft" required>
-                    </div>
-                </div>
                 <div class="col">
                     <div class="form-group">
                         <label for="beds">No. of beds:</label>
@@ -108,6 +102,13 @@
                     <div class="form-group">
                         <label for="baths">No. Baths:</label>
                         <input type="number" id="baths" name="baths" placeholder="no. of baths" required>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label for="sqft">Sqft:</label>
+                        <input type="number" id="sqft" name="sqft" placeholder="sqft" required>
                     </div>
                 </div>
             </div>
@@ -129,8 +130,8 @@
                     <label for="property_type">Property Type:</label>
                     <select id="property_type" name="property_type" required>
                     <option value="" disabled selected hidden>Enter property type</option>
-                    <option value="Apartment / Condo / Townhouse">Apartment / Condo / Townhouse</option>
-                    <option value="Single-Family">Single-Family</option>
+                    <option value="Apartment">Apartment / Condo / Townhouse</option>
+                    <option value="Single_Family">Single-Family</option>
                 </select>
 
                     </div>
@@ -148,7 +149,7 @@
                     <option value="Metal">Metal</option>
                     <option value="Wood">Wood</option>
                     <option value="Other">Other</option>
-                    <option value="Siding (Alum/Vinyl)">Siding (Alum/Vinyl)</option>
+                    <option value="Siding">Siding (Alum/Vinyl)</option>
 
                 </select>
 
@@ -163,6 +164,7 @@
                     <option value="Composition Shingle">Composition Shingle</option>
                     <option value="Other">Other</option>
                     <option value="Shake Shingle">Shake Shingle</option>
+                    <option value="Michael Wilson">Michael Wilson</option>
                 </select>
 
                     </div>
@@ -257,6 +259,13 @@
            <div class="row">
                 <div class="col">
                     <div class="form-group">
+                        <label for="insurance">Insurance:</label>
+                        <input type="number" id="insurance" name="insurance" placeholder="insurance" required>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
                         <label for="median_school">Median School Score:</label>
                         <input type="number" id="median_school" name="median_school" placeholder="median school score" required>
                     </div>
@@ -265,12 +274,6 @@
                     <div class="form-group">
                         <label for="num_schools">No. of schools:</label>
                         <input type="number" id="num_schools" name="num_schools" placeholder="no. of schools" required>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="insurance">Insurance:</label>
-                        <input type="number" id="insurance" name="insurance" placeholder="insurance" required>
                     </div>
                 </div>
             </div>
@@ -284,7 +287,7 @@
             </div>
 
             <div class="row">
-            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            <button type="submit">Predict</button>
             </div>
         </form>
    <br>
